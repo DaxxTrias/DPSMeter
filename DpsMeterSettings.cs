@@ -30,6 +30,6 @@ namespace DPSMeter
         [Menu("Display Position X", "X Coordinate on screen")]
         public RangeNode<int> DpsPositionX { get; set; } = new RangeNode<int>(160, 0, 2000);
         [Menu("Display Position Y", "Y Coordinate on screen")]
-        public RangeNode<int> DpsPositionY { get; set; } = new RangeNode<int>(0, 0, 2000);
+        public RangeNode<int> DpsPositionY { get; set; } = new RangeNode<int>(100, 0, 2000);
     }
 }
