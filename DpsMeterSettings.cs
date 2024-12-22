@@ -25,6 +25,6 @@ namespace DPSMeter
         public ToggleNode ShowCurrentHitDamage { get; set; } = new ToggleNode(true);
         public ToggleNode HasCullingStrike { get; set; } = new ToggleNode(false);
         public RangeNode<int> UpdateTime { get; set; } = new RangeNode<int>(100, 50, 2000);
-        public ToggleNode MultiThreading { get; set; } = new ToggleNode(false);
+        //public ToggleNode MultiThreading { get; set; } = new ToggleNode(false);
     }
 }
