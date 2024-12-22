@@ -9,9 +9,6 @@ namespace DPSMeter
         public DPSMeterSettings()
         {
             ShowInTown = new ToggleNode(false);
-            //DpsFontColor = new ColorBGRA(220, 190, 130, 255);
-            //PeakFontColor = new ColorBGRA(220, 190, 130, 255);
-            //BackgroundColor = new ColorBGRA(0, 0, 0, 255);
             ClearNode = new ButtonNode();
         }
 
@@ -20,7 +17,7 @@ namespace DPSMeter
 
         // public RangeNode<int> TextSize { get; set; } = new RangeNode<int>(16, 10, 20);
         public ColorNode DpsFontColor { get; set; } = System.Drawing.Color.LightSkyBlue;
-        public ColorNode PeakFontColor { get; set; } = System.Drawing.Color.LightSkyBlue;
+        public ColorNode PeakFontColor { get; set; } = System.Drawing.Color.OrangeRed;
         public ColorNode BackgroundColor { get; set; } = System.Drawing.Color.Transparent;
         public ButtonNode ClearNode { get; set; }
         [Menu("Show AOE")]
