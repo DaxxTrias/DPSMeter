@@ -36,6 +36,7 @@ namespace DPSMeter
         private double[] SingleDamageMemory = new double[20];
         private double time;
         public double TotalLifeAroundMonster;
+        private double LockedPeakHit;
 
         public DpsMeter()
         {
@@ -69,6 +70,7 @@ namespace DPSMeter
             lastTime = DateTime.Now;
             SingleDamageMemory = new double[20];
             AOEDamageMemory = new double[20];
+            LockedPeakHit = 0;
         }
 
         public override void Tick()
@@ -110,6 +112,11 @@ namespace DPSMeter
 
                     MaxDpsAoe = Math.Max(CurrentDpsAoe, MaxDpsAoe);
                     MaxDpsSingle = Math.Max(CurrentDpsSingle, MaxDpsSingle);
+
+                    if (Settings.ShowPeakHit.Value)
+                    {
+                        LockedPeakHit = Math.Max(LockedPeakHit, single);
+                    }
                 }
             }
         }
@@ -186,6 +193,14 @@ namespace DPSMeter
 
                 drawText = Graphics.DrawText(CurrentDmgSingle.ToString(), positionLeft, Settings.DpsFontColor, FontAlign.Left);
                 drawText = Graphics.DrawText(hit, position, Settings.DpsFontColor, FontAlign.Right);
+                position.Y += drawText.Y;
+                positionLeft.Y += drawText.Y;
+            }
+
+            if (Settings.ShowPeakHit.Value)
+            {
+                drawText = Graphics.DrawText(LockedPeakHit.ToString(), positionLeft, Settings.PeakFontColor, FontAlign.Left);
+                drawText = Graphics.DrawText("peak hit", position, Settings.PeakFontColor, FontAlign.Right);
                 position.Y += drawText.Y;
                 positionLeft.Y += drawText.Y;
             }

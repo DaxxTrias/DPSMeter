@@ -10,6 +10,7 @@ namespace DPSMeter
         {
             ShowInTown = new ToggleNode(false);
             ClearNode = new ButtonNode();
+            ShowPeakHit = new ToggleNode(false);
         }
 
         public ToggleNode Enable { get; set; } = new ToggleNode(false);
@@ -23,6 +24,8 @@ namespace DPSMeter
         [Menu("Show AOE")]
         public ToggleNode ShowAOE { get; set; } = new ToggleNode(true);
         public ToggleNode ShowCurrentHitDamage { get; set; } = new ToggleNode(true);
+        [Menu("Show Peak Hit Damage", "Track highest single hit damage")]
+        public ToggleNode ShowPeakHit { get; set; }
         public ToggleNode HasCullingStrike { get; set; } = new ToggleNode(false);
         [Menu("UpdateTime","milliseconds to wait between dps updates")]
         public RangeNode<int> UpdateTime { get; set; } = new RangeNode<int>(100, 50, 2000);
