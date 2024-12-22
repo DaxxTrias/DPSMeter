@@ -26,5 +26,9 @@ namespace DPSMeter
         public ToggleNode HasCullingStrike { get; set; } = new ToggleNode(false);
         public RangeNode<int> UpdateTime { get; set; } = new RangeNode<int>(100, 50, 2000);
         //public ToggleNode MultiThreading { get; set; } = new ToggleNode(false);
+        [Menu("Display Position X", "DPSMeter X Display")]
+        public RangeNode<int> DpsPositionX { get; set; } = new RangeNode<int>(160, 0, 2000);
+        [Menu("Display Position Y", "DPSMeter Y Display")]
+        public RangeNode<int> DpsPositionY { get; set; } = new RangeNode<int>(0, 0, 2000);
     }
 }
