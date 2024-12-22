@@ -24,11 +24,12 @@ namespace DPSMeter
         public ToggleNode ShowAOE { get; set; } = new ToggleNode(true);
         public ToggleNode ShowCurrentHitDamage { get; set; } = new ToggleNode(true);
         public ToggleNode HasCullingStrike { get; set; } = new ToggleNode(false);
+        [Menu("UpdateTime","milliseconds to wait between dps updates")]
         public RangeNode<int> UpdateTime { get; set; } = new RangeNode<int>(100, 50, 2000);
         //public ToggleNode MultiThreading { get; set; } = new ToggleNode(false);
-        [Menu("Display Position X", "DPSMeter X Display")]
+        [Menu("Display Position X", "X Coordinate on screen")]
         public RangeNode<int> DpsPositionX { get; set; } = new RangeNode<int>(160, 0, 2000);
-        [Menu("Display Position Y", "DPSMeter Y Display")]
+        [Menu("Display Position Y", "Y Coordinate on screen")]
         public RangeNode<int> DpsPositionY { get; set; } = new RangeNode<int>(0, 0, 2000);
     }
 }
