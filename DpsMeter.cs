@@ -1,12 +1,12 @@
 ﻿using System;
-using ExileCore;
-using ExileCore.PoEMemory.Components;
-using ExileCore.PoEMemory.MemoryObjects;
-using ExileCore.Shared.Enums;
-using ExileCore.Shared.Helpers;
+using ExileCore2;
+using ExileCore2.PoEMemory.Components;
+using ExileCore2.PoEMemory.MemoryObjects;
+using ExileCore2.Shared.Enums;
+using ExileCore2.Shared.Helpers;
 using JM.LinqFaster;
-using SharpDX;
 using Vector2 = System.Numerics.Vector2;
+using RectangleF = ExileCore2.Shared.RectangleF;
 
 namespace DPSMeter
 {
@@ -71,15 +71,15 @@ namespace DPSMeter
             AOEDamageMemory = new double[20];
         }
 
-        public override Job Tick()
+        public override void Tick()
         {
-            if (!Settings.Enable) return null;
+            if (!Settings.Enable) return;
 
-            if (Settings.MultiThreading)
-                return GameController.MultiThreadManager.AddJob(TickLogic, nameof(DpsMeter));
+            //if (Settings.MultiThreading)
+            //    return GameController.MultiThreadManager.AddJob(TickLogic, nameof(DpsMeter));
 
             TickLogic();
-            return null;
+            return;
         }
 
         private void TickLogic()
@@ -222,7 +222,6 @@ namespace DPSMeter
             positionLeft.Y += drawText.Y;
             var bounds = new RectangleF(positionLeft.X - 50, startY + 3, measury.X + 50, position.Y - startY);
 
-            Graphics.DrawImage("preload-new.png", bounds, Settings.BackgroundColor);
             GameController.LeftPanel.StartDrawPoint = position;
         }
     }
