@@ -185,13 +185,13 @@ namespace DPSMeter
             {
                 if (Settings.ShowAOE.Value)
                 {
-                    drawText = Graphics.DrawText(CurrentDmgAoe.ToString(), positionLeft, Settings.DpsFontColor, FontAlign.Left);
+                    drawText = Graphics.DrawText(CurrentDmgAoe.ToString("N0"), positionLeft, Settings.DpsFontColor, FontAlign.Left);
                     drawText = Graphics.DrawText(aoe_hit, position, Settings.DpsFontColor, FontAlign.Right);
                     position.Y += drawText.Y;
                     positionLeft.Y += drawText.Y;
                 }
 
-                drawText = Graphics.DrawText(CurrentDmgSingle.ToString(), positionLeft, Settings.DpsFontColor, FontAlign.Left);
+                drawText = Graphics.DrawText(CurrentDmgSingle.ToString("N0"), positionLeft, Settings.DpsFontColor, FontAlign.Left);
                 drawText = Graphics.DrawText(hit, position, Settings.DpsFontColor, FontAlign.Right);
                 position.Y += drawText.Y;
                 positionLeft.Y += drawText.Y;
@@ -199,7 +199,7 @@ namespace DPSMeter
 
             if (Settings.ShowPeakHit.Value)
             {
-                drawText = Graphics.DrawText(LockedPeakHit.ToString(), positionLeft, Settings.PeakFontColor, FontAlign.Left);
+                drawText = Graphics.DrawText(LockedPeakHit.ToString("N0"), positionLeft, Settings.PeakFontColor, FontAlign.Left);
                 drawText = Graphics.DrawText("peak hit", position, Settings.PeakFontColor, FontAlign.Right);
                 position.Y += drawText.Y;
                 positionLeft.Y += drawText.Y;
@@ -207,31 +207,31 @@ namespace DPSMeter
 
             if (Settings.ShowAOE.Value)
             {
-                drawText = Graphics.DrawText(CurrentDpsAoe.ToString(), positionLeft, Settings.PeakFontColor, FontAlign.Left);
+                drawText = Graphics.DrawText(CurrentDpsAoe.ToString("N0"), positionLeft, Settings.PeakFontColor, FontAlign.Left);
                 drawText = Graphics.DrawText(aoe_dps, position, Settings.PeakFontColor, FontAlign.Right);
                 position.Y += drawText.Y;
                 positionLeft.Y += drawText.Y;
             }
 
-            drawText = Graphics.DrawText(CurrentDpsSingle.ToString(), positionLeft, Settings.PeakFontColor, FontAlign.Left);
+            drawText = Graphics.DrawText(CurrentDpsSingle.ToString("N0"), positionLeft, Settings.PeakFontColor, FontAlign.Left);
             drawText = Graphics.DrawText(dps, position, Settings.PeakFontColor, FontAlign.Right);
             position.Y += drawText.Y;
             positionLeft.Y += drawText.Y;
 
             if (Settings.ShowAOE.Value)
             {
-                drawText = Graphics.DrawText(MaxDpsAoe.ToString(), positionLeft, Settings.PeakFontColor, FontAlign.Left);
+                drawText = Graphics.DrawText(MaxDpsAoe.ToString("N0"), positionLeft, Settings.PeakFontColor, FontAlign.Left);
                 drawText = Graphics.DrawText(max_aoe_dps, position, Settings.PeakFontColor, FontAlign.Right);
                 position.Y += drawText.Y;
                 positionLeft.Y += drawText.Y;
             }
 
-            drawText = Graphics.DrawText(MaxDpsSingle.ToString(), positionLeft, Settings.PeakFontColor, FontAlign.Left);
+            drawText = Graphics.DrawText(MaxDpsSingle.ToString("N0"), positionLeft, Settings.PeakFontColor, FontAlign.Left);
             drawText = Graphics.DrawText(max_dps, position, Settings.PeakFontColor, FontAlign.Right);
             position.Y += drawText.Y;
             positionLeft.Y += drawText.Y;
 
-            drawText = Graphics.DrawText(TotalLifeAroundMonster.ToString(), positionLeft, Settings.PeakFontColor, FontAlign.Left);
+            drawText = Graphics.DrawText(TotalLifeAroundMonster.ToString("N0"), positionLeft, Settings.PeakFontColor, FontAlign.Left);
             drawText = Graphics.DrawText(hp, position, Settings.PeakFontColor, FontAlign.Right);
             position.Y += drawText.Y;
             positionLeft.Y += drawText.Y;
