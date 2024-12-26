@@ -1,6 +1,7 @@
 ﻿using ExileCore2.Shared.Attributes;
 using ExileCore2.Shared.Interfaces;
 using ExileCore2.Shared.Nodes;
+using System.Numerics;
 
 namespace DPSMeter
 {
@@ -29,10 +30,7 @@ namespace DPSMeter
         public ToggleNode HasCullingStrike { get; set; } = new ToggleNode(false);
         [Menu("UpdateTime","milliseconds to wait between dps updates")]
         public RangeNode<int> UpdateTime { get; set; } = new RangeNode<int>(100, 50, 2000);
-        //public ToggleNode MultiThreading { get; set; } = new ToggleNode(false);
-        [Menu("Display Position X", "X Coordinate on screen")]
-        public RangeNode<int> DpsPositionX { get; set; } = new RangeNode<int>(160, 0, 2000);
-        [Menu("Display Position Y", "Y Coordinate on screen")]
-        public RangeNode<int> DpsPositionY { get; set; } = new RangeNode<int>(180, 0, 2000);
+        [Menu("Display Position", "X and Y coordinates to draw on screen")]
+        public RangeNode<Vector2> DisplayPosition { get; set; } = new(new Vector2(160, 160), Vector2.Zero, Vector2.One * 4000);
     }
 }

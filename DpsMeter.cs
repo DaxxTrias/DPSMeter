@@ -175,7 +175,7 @@ namespace DPSMeter
                 !Settings.ShowInTown && GameController.Area.CurrentArea.IsHideout)
                 return;
 
-            var position = new Vector2(Settings.DpsPositionX, Settings.DpsPositionY);
+            var position = Settings.DisplayPosition.Value;
             var startY = position.Y;
             var measury = Graphics.MeasureText($"12345678 {max_aoe_dps}");
             var positionLeft = position.Translate(-measury.X, 0);
