@@ -184,6 +184,9 @@ namespace DPSMeter
                 !Settings.ShowInTown && GameController.Area.CurrentArea.IsHideout)
                 return;
 
+            // Store the original value of StartDrawPoint
+            var originalStartDrawPoint = GameController.LeftPanel.StartDrawPoint;
+
             var position = Settings.DisplayPosition.Value;
             var startY = position.Y;
             var measury = Graphics.MeasureText($"12345678 {max_aoe_dps}");
@@ -246,7 +249,8 @@ namespace DPSMeter
             positionLeft.Y += drawText.Y;
             var bounds = new RectangleF(positionLeft.X - 50, startY + 3, measury.X + 50, position.Y - startY);
 
-            GameController.LeftPanel.StartDrawPoint = position;
+            // Restore the original value of StartDrawPoint
+            GameController.LeftPanel.StartDrawPoint = originalStartDrawPoint;
         }
     }
 }
