@@ -16,6 +16,7 @@ namespace DPSMeter
         }
 
         public ToggleNode Enable { get; set; } = new ToggleNode(false);
+        [Menu("Show in Town and Hideout")]
         public ToggleNode ShowInTown { get; set; }
 
         // public RangeNode<int> TextSize { get; set; } = new RangeNode<int>(16, 10, 20);
@@ -35,6 +36,7 @@ namespace DPSMeter
         [Menu("UpdateTime","milliseconds to wait between dps updates")]
         public RangeNode<int> UpdateTime { get; set; } = new RangeNode<int>(100, 50, 2000);
         [Menu("Display Position", "X and Y coordinates to draw on screen")]
-        public RangeNode<Vector2> DisplayPosition { get; set; } = new(new Vector2(160, 160), Vector2.Zero, Vector2.One * 4000);
+        public RangeNode<Vector2> DisplayPosition { get; set; } = new(new Vector2(160, 160), new Vector2(-3000, -3000), Vector2.One * 4000);
+
     }
 }
